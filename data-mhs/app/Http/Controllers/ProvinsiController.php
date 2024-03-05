@@ -11,7 +11,7 @@ class ProvinsiController extends Controller
     public function addProvinsi()
     {
         return view('provinsi.add');
-    } 
+    }
 
     public function store (Request $request)
     {

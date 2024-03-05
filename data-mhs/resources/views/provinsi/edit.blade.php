@@ -53,10 +53,10 @@
                     <li>
                         <a href="{{ url('kecamatan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kecamatan</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ url('riwayatpendidikan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Riwayat
                             Pendidikan</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

@@ -1,4 +1,5 @@
 <!Doctype html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,17 +17,21 @@
     <link rel="stylesheet" href="{{ asset('style/assets/scss/style.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 
     <script src="{{ asset('style/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('style/assets/js/plugins.js') }}"></script>
     <script src="{{ asset('style/assets/js/main.js') }}"></script>
+    <script src="{{ asset('js/script.js')}}"></script>
+
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu"
+                    aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="">Dashboard</a>
@@ -36,22 +41,23 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{{url ('home')}}"> <i class="menu-icon fa fa-dashboard"></i>Home</a>
+                        <a href="{{ url('home') }}"> <i class="menu-icon fa fa-dashboard"></i>Home</a>
                     </li>
                     <li>
-                        <a href="{{url ('mahasiswa')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Mahasiswa </a>
+                        <a href="{{ url('mahasiswa') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Mahasiswa </a>
                     </li>
                     <li>
-                        <a href="{{url ('provinsi')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Provinsi </a>
+                        <a href="{{ url('provinsi') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Provinsi </a>
                     </li>
                     <li>
-                        <a href="{{url ('kabupaten')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kabupaten</a>
+                        <a href="{{ url('kabupaten') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kabupaten</a>
                     </li>
                     <li>
-                        <a href="{{url ('kecamatan')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kecamatan</a>
+                        <a href="{{ url('kecamatan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kecamatan</a>
                     </li>
                     {{-- <li>
-                        <a href="{{url ('riwayatpendidikan')}}"> <i class="menu-icon fa fa-puzzle-piece"></i>Riwayat Pendidikan</a>
+                        <a href="{{ url('riwayatpendidikan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Riwayat
+                            Pendidikan</a>
                     </li> --}}
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -67,33 +73,36 @@
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
                             <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..."
+                                    aria-label="Search">
                                 <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                             </form>
                         </div>
                         <div class="dropdown for-notification">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                            <span class="count bg-danger">3</span>
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="notification">
-                            <p class="red">You have 3 Notification</p>
-                            <a class="dropdown-item media bg-flat-color-1" href="#">
-                                <i class="fa fa-check"></i>
-                                <p>Server #1 overloaded.</p>
-                            </a>
-                            <a class="dropdown-item media bg-flat-color-4" href="#">
-                                <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
-                            </a>
-                          </div>
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="count bg-danger">3</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                                <p class="red">You have 3 Notification</p>
+                                <a class="dropdown-item media bg-flat-color-1" href="#">
+                                    <i class="fa fa-check"></i>
+                                    <p>Server #1 overloaded.</p>
+                                </a>
+                                <a class="dropdown-item media bg-flat-color-4" href="#">
+                                    <i class="fa fa-info"></i>
+                                    <p>Server #2 overloaded.</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{{ asset('style/images/admin.jpg') }}">
                         </a>
                         <div class="user-menu dropdown-menu">
@@ -103,10 +112,11 @@
                     </div>
 
                     <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="language"
+                            aria-haspopup="true" aria-expanded="true">
                             <i class="flag-icon flag-icon-id"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="language" >
+                        <div class="dropdown-menu" aria-labelledby="language">
                             <div class="dropdown-item">
                                 <span class="flag-icon flag-icon-id"></span>
                             </div>
@@ -131,7 +141,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Kabupaten</h1>
+                        <h1>Kecamatan</h1>
                     </div>
                 </div>
             </div>
@@ -153,47 +163,58 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="pull-left">
-                            <strong>Data Kabupaten</strong>
+                            <strong>Tambah Kecamatan</strong>
                         </div>
                         <div class="pull-right">
-                            <a href="{{ url ('kabupaten/add')}}" class="btn btn-success btn-sm">
-                                <i class="fa fa-plus"></i>Add
+                            <a href="{{ url('kecamatan') }}" class="btn btn-success btn-sm">
+                                Back
                             </a>
                         </div>
                     </div>
-                    <div class="card-body table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Nama Provinsi</th>
-                                    <th>Nama Kabupaten</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+                    <div class="card-body">
 
-                            <tbody>
-                                @foreach ($kabupatens as $item)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->prov->nama_provinsi }}</td>
-                                        <td>{{ $item->nama_kabupaten}}</td>
-                                        <td class="text-center">
-                                            <a href="{{ url('kabupaten/'.$item->id.'/edit') }}" class="btn btn-warning">Edit</a>
-                                            <form action="{{ url('kabupaten/'.$item->id) }}" method="POST" class="d-inline">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger ml-3">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="row">
+                            <div class="col-6">
+                                <form action="{{ url('kecamatan') }}" method="POST">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="prov_id">Nama Provinsi:</label>
+                                        <select name="prov_id" id="prov_id" class="form-control">
+                                            <option value="">-- Pilih Provinsi --</option>
+                                            @foreach($provinsis as $provinsi)
+                                                <option value="{{ $provinsi->id }}">{{ $provinsi->nama_provinsi }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kab_id">Nama Kabupaten:</label>
+                                        <select name="kab_id" id="kab_id" class="form-control">
+                                            <option value="">-- Pilih Kabupaten --</option>
+                                            @foreach($kabupatens as $kabupaten)
+                                                <option value="{{ $kabupaten->id }}">{{ $kabupaten->nama_kabupaten }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nama_kecamatan">Nama Kecamatan</label>
+                                        <input type="text"
+                                            class="form-control @error('nama_kecamatan') is-invalid @enderror"
+                                            id="nama_kecamatan" name="nama_kecamatan" value="{{ old('nama_kecamatan') }}">
+                                        @error('nama_kecamatan')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <a href="{{ url('kabupaten')}}" class="btn btn-danger">Batal</a>
+                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

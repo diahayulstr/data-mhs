@@ -53,10 +53,10 @@
                     <li>
                         <a href="{{ url('kecamatan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Kecamatan</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ url('riwayatpendidikan') }}"> <i class="menu-icon fa fa-puzzle-piece"></i>Riwayat
                             Pendidikan</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -173,15 +173,17 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <form action="{{ url('kabupaten/'.$kabupaten->id) }}" method="POST">
+                                <form action="{{ url('kabupaten/'. $kabupaten->id) }}" method="POST">
                                     @method('PATCH')
                                     @csrf
                                     <div class="form-group">
                                         <label for="prov_id">Nama Provinsi</label>
                                         <select name="prov_id" id="prov_id" class="form-control">
                                             <option value="">-- Pilih --</option>
-                                            @foreach($provinsis as $item)
-                                                <option value="{{ $item->id }}" {{ old('prov_id', $kabupaten->prov_id) == $item->id ? 'selected' : null }}>{{ $item->nama_provinsi }}</option>
+                                            @foreach ($provinsis as $item)
+                                                <option value="{{ $item->id }}"
+                                                    {{ old('prov_id', $kabupaten->prov_id) == $item->id ? 'selected' : null }}>
+                                                    {{ $item->nama_provinsi }}</option>
                                             @endforeach
                                         </select>
                                         @error('prov_id')
@@ -193,12 +195,13 @@
                                         <label for="nama_kabupaten">Nama Kabupaten</label>
                                         <input type="text"
                                             class="form-control @error('nama_kabupaten') is-invalid @enderror"
-                                            id="nama_kabupaten" name="nama_kabupaten" value="{{ old('nama_kabupaten', $kabupaten->nama_kabupaten) }}">
+                                            id="nama_kabupaten" name="nama_kabupaten"
+                                            value="{{ old('nama_kabupaten', $kabupaten->nama_kabupaten) }}">
                                         @error('nama_kabupaten')
                                             <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                    <a href="{{ url('kabupaten')}}" class="btn btn-danger">Batal</a>
+                                    <a href="{{ url('kabupaten') }}" class="btn btn-danger">Batal</a>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </form>
                             </div>

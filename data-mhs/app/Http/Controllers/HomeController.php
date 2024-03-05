@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    public function mahasiswa()
-    {
-        return view('mahasiswa.mahasiswa');
-    }
+    // public function mahasiswa()
+    // {
+    //     return view('mahasiswa.mahasiswa');
+    // }
 
     public function provinsi()
     {
@@ -25,10 +25,11 @@ class HomeController extends Controller
     //     return view('kabupaten.kabupaten', ['kabupatens' => $kab]);
     // }
 
-    public function kecamatan()
-    {
-        return view('kecamatan.kecamatan');
-    }
+    // public function kecamatan()
+    // {
+    //     $kec = DB::table('kecamatans')->get();
+    //     return view('kecamatan.kecamatan', ['kabupatens' => $kec]);
+    // }
 
     public function riwayatpendidikan()
     {

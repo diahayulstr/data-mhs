@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Kabupaten;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
-
+ 
 class KabupatenController extends Controller
 {
     public function index()
@@ -54,5 +54,11 @@ class KabupatenController extends Controller
         $kabupaten -> save();
         $request   -> session()->flash('pesan', 'Kabupaten berhasil di edit');
         return redirect()->route('kabupaten.kabupaten', ['kabupaten' => $kabupaten -> id]);
+    }
+
+    public function delete($id)
+    {
+        DB::table('kabupatens')->where('id', $id)->delete();
+        return redirect('kabupaten')->with('pesan', 'Data berhasil dihapus');
     }
 }
